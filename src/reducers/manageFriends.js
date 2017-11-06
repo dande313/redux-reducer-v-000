@@ -3,6 +3,6 @@ export function manageFriends(state, action){
     case 'ADD_FRIEND'
       return Object.assign({}, state, {friends: [...state.friends, action.friend]})
     case 'REMOVE_FRIEND'
-      return Object.assign({}, state, {friends: [...state.friends, action.friend]})
+      return {friends: state.friends.filter(f => f.id !== action.id)}
   }
 }
